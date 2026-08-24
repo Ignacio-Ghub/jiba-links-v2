@@ -17,8 +17,9 @@
     --navy: #16283F; 
     --azul-medio: #2E4F73;
     --azul-cielo: #7FA8C9;
-    --azul-vivo: #3882D7; /* Extraído directamente de los botones de tu web */
+    --azul-vivo: #3882D7; 
     --slate: #B9C7D4;
+    --black-bg: #0D0D10;
     
     --primary-gradient: linear-gradient(135deg, var(--azul-cielo) 0%, var(--navy) 100%); 
     --glass-bg: rgba(255, 255, 255, 0.08);
@@ -34,7 +35,7 @@
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
     color: var(--white);
-    background: linear-gradient(-45deg, #0D0D10, var(--navy), var(--azul-medio), #1a1a24);
+    background: linear-gradient(-45deg, var(--black-bg), var(--navy), var(--azul-medio), #1a1a24);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     position: relative;
@@ -111,26 +112,41 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
+  /* Arquitectura del Anillo Animado Exterior */
   .avatar-ring {
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    padding: 4px;
-    background: var(--primary-gradient);
+    width: 115px; 
+    height: 115px;
     margin-bottom: 24px;
     position: relative;
-    /* Sombra luminosa ajustada al azul vivo de la marca */
-    box-shadow: 0 0 25px rgba(56, 130, 215, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
   }
+  
+  .avatar-ring::before {
+    content: '';
+    position: absolute;
+    inset: -6px; /* Desplaza el anillo hacia afuera de la foto */
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--azul-vivo), var(--azul-cielo), var(--navy));
+    background-size: 200% 200%;
+    animation: gradientBG 4s ease infinite; /* Animación de movimiento de color */
+    z-index: 0;
+    box-shadow: 0 0 25px rgba(56, 130, 215, 0.6); /* Resplandor exterior */
+  }
+
   .avatar-ring .photo {
-    width: 100%; height: 100%;
-    background-image: url("/avatar.jpg");
-    background-color: var(--navy); 
+    width: 100%; 
+    height: 100%;
+    background-image: url("avatar.jpg");
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center;
     border-radius: 50%;
-    /* Borde circular actualizado al azul vivo */
-    border: 3px solid var(--azul-vivo);
+    position: relative;
+    z-index: 1;
+    border: 4px solid var(--black-bg); /* Genera la separación entre el anillo dinámico y tu foto */
   }
 
   .name {
@@ -272,27 +288,30 @@
     gap: 12px;
   }
   
-  /* Contenedor del Logo 100% circular, igual al diseño original */
+  /* Contenedor del Logo escalado correctamente */
   .footer-logo {
-    width: 48px; height: 48px;
+    width: 48px; 
+    height: 48px;
     border-radius: 50%;
-    overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
     background: var(--white);
-    margin-bottom: 2px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    margin-bottom: 4px;
   }
-  .footer-logo .logo-mark {
-    width: 85%; height: 85%;
-    background-image: url("/logo.png");
-    background-size: contain; background-repeat: no-repeat; background-position: center;
+  .footer-logo img {
+    width: 75%; /* Reduce el tamaño de la imagen para que encaje sin cortarse */
+    height: 75%;
+    object-fit: contain; /* Obliga a mantener las proporciones exactas */
+    border-radius: 50%;
   }
   
   .copyright {
-    font-size: 12px; 
+    font-size: 13px; 
     color: var(--text-muted);
-    font-weight: 300;
-    max-width: 90%;
+    font-weight: 400;
+    white-space: nowrap; /* Evita que el texto salte a una segunda línea */
   }
 
   @media (max-width: 400px) {
@@ -301,6 +320,7 @@
     .link-btn .title { font-size: 15px; }
     .link-btn .sub { font-size: 12px; }
     .avatar-ring { width: 100px; height: 100px; }
+    .copyright { font-size: 11px; }
   }
 </style>
 </head>
@@ -403,12 +423,14 @@
     </a>
   </div>
 
- <footer>
+  <footer>
     <div class="footer-logo">
-        <img src="logo.png" alt="Logo JIBA" style="width: 80%; height: 80%; object-fit: contain;">
+        <img src="logo.png" alt="Logo JIBA">
     </div>
-    <p class="copyright">© <span id="year"></span> · Jesús Ignacio Briceño Alarcón · JIBA</p>
+    <p class="copyright">© <span id="year"></span> Jesús Ignacio Briceño Alarcón - JIBA</p>
   </footer>
+
+</div>
 
 <script>
   (function(){
