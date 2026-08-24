@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Jesús Ignacio Briceño Alarcón · JIBA</title>
+<meta name="description" content="Fortalezco capacidades en el sector social mediante IA estratégica, ética y responsable, y el diseño y gestión de proyectos con estándares internacionales.">
+<meta property="og:title" content="Jesús Ignacio Briceño Alarcón · JIBA">
+<meta property="og:description" content="Fortalezco capacidades en el sector social mediante IA estratégica, ética y responsable, y el diseño y gestión de proyectos con estándares internacionales.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --navy: #0f172a; /* Azul más profundo y moderno */
+    --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); /* Gradiente vibrante */
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --text-muted: rgba(255, 255, 255, 0.7);
+  }
+  
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  
+  body {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif; /* Cambiado a Inter, más moderna para UI */
+    color: var(--white);
+    /* Fondo animado moderno */
+    background: linear-gradient(-45deg, #1e293b, #0f172a, #1e1b4b, #312e81);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px 60px;
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Efectos de luz en el fondo */
+  body::before, body::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    opacity: 0.5;
+  }
+  body::before {
+    top: -100px;
+    left: -100px;
+    background: #3b82f6;
+  }
+  body::after {
+    bottom: -100px;
+    right: -100px;
+    background: #8b5cf6;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Cambio de Idioma Glassmorphism */
+  .lang-toggle {
+    align-self: flex-end;
+    display: flex;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 4px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .lang-toggle button {
+    border: none;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .lang-toggle button.active {
+    background: var(--white);
+    color: var(--navy);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Avatar con efecto glow */
+  .avatar-ring {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    padding: 4px;
+    background: var(--primary-gradient);
+    margin-bottom: 24px;
+    position: relative;
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
+  }
+  .avatar-ring .photo {
+    width: 100%; height: 100%;
+    background-image: url("/avatar.jpg");
+    background-color: var(--navy); /* Fallback */
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    border-radius: 50%;
+    border: 4px solid var(--navy);
+  }
+
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 8px;
+    background: linear-gradient(to right, #fff, #d1d5db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .tagline {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 400px;
+    margin: 0 0 40px;
+    font-weight: 300;
+  }
+
+  /* Botones Glassmorphism Modernos */
+  .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .link-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 16px 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+  }
+  
+  /* Efecto Hover Avanzado */
+  .link-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+  }
+  .link-btn:hover::before {
+    left: 100%;
+  }
+  .link-btn:hover {
+    transform: translateY(-4px) scale(1.01);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .link-btn .icon {
+    flex: 0 0 auto;
+    width: 44px; height: 44px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .link-btn:hover .icon {
+    background: var(--white);
+  }
+  .link-btn:hover .icon svg {
+    stroke: var(--navy);
+  }
+  .link-btn .icon svg {
+    width: 20px; height: 20px; 
+    stroke: var(--white);
+    transition: stroke 0.3s ease;
+  }
+  
+  .link-btn .label { flex: 1; text-align: left; }
+  .link-btn .title {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+  .link-btn .sub {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--white);
+    background: var(--primary-gradient);
+    padding: 4px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  /* Redes Sociales Flotantes */
+  .social-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+    padding: 12px 24px;
+    background: var(--glass-bg);
+    border-radius: 30px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+  }
+  .social-row a {
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .social-row a:hover {
+    transform: translateY(-4px) scale(1.1);
+  }
+  .social-row svg {
+    width: 22px; height: 22px; 
+    stroke: var(--white);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  .social-row a:hover svg { opacity: 1; }
+
+  /* Footer Minimalista */
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer-logo {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .footer-logo .logo-mark {
+    width: 60%; height: 60%;
+    background-image: url("/logo.png");
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .copyright {
+    font-size: 12px; 
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  @media (max-width: 400px) {
+    .name { font-size: 28px; }
+    .link-btn { padding: 14px 16px; }
+    .link-btn .title { font-size: 15px; }
+    .link-btn .sub { font-size: 12px; }
+    .avatar-ring { width: 100px; height: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="lang-toggle">
+    <button data-set-lang="es" class="active">ES</button>
+    <button data-set-lang="en">EN</button>
+  </div>
+
+  <div class="avatar-ring">
+    <div class="photo"></div>
+  </div>
+
+  <h1 class="name">Jesús Ignacio Briceño Alarcón</h1>
+
+  <p class="tagline"
+     data-es="Fortalezco capacidades en el sector social mediante IA estratégica, ética y responsable, y el diseño y gestión de proyectos con estándares internacionales."
+     data-en="I build capacity in the social sector through strategic, ethical and responsible AI, and the design and management of projects aligned with international standards.">
+    Fortalezco capacidades en el sector social mediante IA estratégica, ética y responsable, y el diseño y gestión de proyectos con estándares internacionales.
+  </p>
+
+  <div class="links">
+
+    <!-- Sitio web -->
+    <a class="link-btn" target="_blank" rel="noopener"
+       href="https://ignaciobriceno.com/?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=sitio_web">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      </span>
+      <span class="label">
+        <span class="title" data-es="Sitio web" data-en="Website">Sitio web</span>
+        <span class="sub" data-es="Blog, artículos y perspectivas" data-en="Blog, articles and perspectives">Blog, artículos y perspectivas</span>
+      </span>
+    </a>
+
+    <!-- Consultoría -->
+    <a class="link-btn" target="_blank" rel="noopener"
+       href="https://ignaciobriceno.com/consultoria?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=consultoria">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </span>
+      <span class="label">
+        <span class="title" data-es="Consultoría" data-en="Consulting">Consultoría</span>
+        <span class="sub" data-es="Acompañamiento en IA para el sector social" data-en="AI advisory for the social sector">Acompañamiento en IA para el sector social</span>
+      </span>
+    </a>
+
+    <!-- Recursos gratuitos -->
+    <a class="link-btn" target="_blank" rel="noopener"
+       href="https://ignaciobriceno.com/recursos?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=recursos">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </span>
+      <span class="label">
+        <span class="title" data-es="Recursos gratuitos" data-en="Free resources">Recursos gratuitos</span>
+        <span class="sub" data-es="Checklist, kit y guías de IA ética" data-en="Checklist, kit and ethical-AI guides">Checklist, kit y guías de IA ética</span>
+      </span>
+    </a>
+
+    <!-- Newsletter -->
+    <a class="link-btn" target="_blank" rel="noopener"
+       href="https://ignaciobriceno.com/newsletter?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=newsletter">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </span>
+      <span class="label">
+        <span class="title" data-es="Newsletter Brújula Social" data-en="Brújula Social Newsletter">Newsletter Brújula Social</span>
+        <span class="sub" data-es="Semanal · herramientas, recursos y tendencias en IA" data-en="Weekly · AI tools, resources and trends">Semanal · herramientas, recursos y tendencias en IA</span>
+      </span>
+    </a>
+
+    <!-- EcoTerras -->
+    <a class="link-btn" target="_blank" rel="noopener"
+       href="https://www.instagram.com/ecoterrassostenible/?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=ecoterras">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </span>
+      <span class="label">
+        <span class="title" data-es="EcoTerras" data-en="EcoTerras">EcoTerras</span>
+        <span class="sub" data-es="Sostenibilidad práctica" data-en="Practical sustainability">Sostenibilidad práctica</span>
+      </span>
+      <span class="badge" data-es="Próximamente" data-en="Coming soon">Próximamente</span>
+    </a>
+
+  </div>
+
+  <div class="social-row">
+    <a href="https://www.instagram.com/ignaciobricenoa/?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=social_instagram" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/ignaciobricenoalarcon/?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=social_linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v1.7A5 5 0 0 1 16 8z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61588721271507&utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=social_facebook" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+        <div class="logo-mark"></div>
+    </div>
+    <p class="copyright">© <span id="year"></span> Jesús Ignacio Briceño Alarcón · JIBA</p>
+  </footer>
+
+</div>
+
+<script>
+  (function(){
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    var STORAGE_KEY = 'jiba_links_lang';
+    var buttons = document.querySelectorAll('[data-set-lang]');
+    var textNodes = document.querySelectorAll('[data-es][data-en]');
+
+    function applyLang(lang){
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.lang = lang;
+      textNodes.forEach(function(el){
+        // Usamos una clase o comprobación para no borrar la estructura interna de .label
+        if(el.classList.contains('title') || el.classList.contains('sub') || el.classList.contains('badge') || el.classList.contains('tagline')){
+            el.textContent = el.getAttribute('data-' + lang);
+        }
+      });
+      buttons.forEach(function(btn){
+        btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+      });
+      try{ localStorage.setItem(STORAGE_KEY, lang); }catch(e){}
+    }
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        applyLang(btn.getAttribute('data-set-lang'));
+      });
+    });
+
+    var saved = null;
+    try{ saved = localStorage.getItem(STORAGE_KEY); }catch(e){}
+    if(saved === 'en'){ applyLang('en'); }
+  })();
+</script>
+
+</body>
+</html>
