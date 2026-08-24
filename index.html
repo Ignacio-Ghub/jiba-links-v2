@@ -14,12 +14,17 @@
 <style>
   :root {
     --white: #FFFFFF;
-    --navy: #0f172a; /* Azul más profundo y moderno */
-    --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); /* Gradiente vibrante */
+    /* Tu paleta corporativa */
+    --navy: #16283F; 
+    --azul-medio: #2E4F73;
+    --azul-cielo: #7FA8C9;
+    --slate: #B9C7D4;
+    
+    --primary-gradient: linear-gradient(135deg, var(--azul-cielo) 0%, var(--navy) 100%); 
     --glass-bg: rgba(255, 255, 255, 0.08);
     --glass-border: rgba(255, 255, 255, 0.15);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    --text-muted: rgba(255, 255, 255, 0.7);
+    --glass-shadow: 0 8px 32px 0 rgba(22, 40, 63, 0.4);
+    --text-muted: rgba(255, 255, 255, 0.75);
   }
   
   * { box-sizing: border-box; }
@@ -27,10 +32,10 @@
   
   body {
     min-height: 100vh;
-    font-family: 'Inter', sans-serif; /* Cambiado a Inter, más moderna para UI */
+    font-family: 'Inter', sans-serif;
     color: var(--white);
-    /* Fondo animado moderno */
-    background: linear-gradient(-45deg, #1e293b, #0f172a, #1e1b4b, #312e81);
+    /* Fondo animado adaptado a tus azules */
+    background: linear-gradient(-45deg, #0D0D10, var(--navy), var(--azul-medio), #1a1a24);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     position: relative;
@@ -46,26 +51,26 @@
     100% { background-position: 0% 50%; }
   }
 
-  /* Efectos de luz en el fondo */
+  /* Luces de fondo alineadas a tu marca */
   body::before, body::after {
     content: '';
     position: absolute;
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(120px);
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.4;
   }
   body::before {
-    top: -100px;
+    top: -50px;
     left: -100px;
-    background: #3b82f6;
+    background: var(--azul-cielo);
   }
   body::after {
-    bottom: -100px;
+    bottom: -50px;
     right: -100px;
-    background: #8b5cf6;
+    background: var(--azul-medio);
   }
 
   .container {
@@ -79,7 +84,6 @@
     text-align: center;
   }
 
-  /* Cambio de Idioma Glassmorphism */
   .lang-toggle {
     align-self: flex-end;
     display: flex;
@@ -109,7 +113,6 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
-  /* Avatar con efecto glow */
   .avatar-ring {
     width: 120px; height: 120px;
     border-radius: 50%;
@@ -117,17 +120,17 @@
     background: var(--primary-gradient);
     margin-bottom: 24px;
     position: relative;
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 25px rgba(127, 168, 201, 0.3);
   }
   .avatar-ring .photo {
     width: 100%; height: 100%;
     background-image: url("/avatar.jpg");
-    background-color: var(--navy); /* Fallback */
+    background-color: var(--navy); 
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center;
     border-radius: 50%;
-    border: 4px solid var(--navy);
+    border: 3px solid var(--navy);
   }
 
   .name {
@@ -136,7 +139,7 @@
     font-size: 32px;
     line-height: 1.2;
     margin: 0 0 8px;
-    background: linear-gradient(to right, #fff, #d1d5db);
+    background: linear-gradient(to right, #fff, var(--slate));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -149,7 +152,6 @@
     font-weight: 300;
   }
 
-  /* Botones Glassmorphism Modernos */
   .links {
     width: 100%;
     display: flex;
@@ -175,12 +177,11 @@
     overflow: hidden;
   }
   
-  /* Efecto Hover Avanzado */
   .link-btn::before {
     content: '';
     position: absolute;
     top: 0; left: -100%; width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
     transition: left 0.5s ease;
   }
   .link-btn:hover::before {
@@ -231,15 +232,14 @@
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: var(--white);
-    background: var(--primary-gradient);
+    color: var(--navy);
+    background: var(--azul-cielo);
     padding: 4px 10px;
     border-radius: 12px;
     white-space: nowrap;
     text-transform: uppercase;
   }
 
-  /* Redes Sociales Flotantes */
   .social-row {
     display: flex;
     gap: 16px;
@@ -265,24 +265,25 @@
   }
   .social-row a:hover svg { opacity: 1; }
 
-  /* Footer Minimalista */
   footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
   }
+  /* Estructura ajustada para forzar la visualización del logo */
   .footer-logo {
-    width: 36px; height: 36px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.85); /* Fondo claro para contraste */
     display: flex; align-items: center; justify-content: center;
+    padding: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
-  .footer-logo .logo-mark {
-    width: 60%; height: 60%;
-    background-image: url("/logo.png");
-    background-size: contain; background-repeat: no-repeat; background-position: center;
+  .footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
   .copyright {
     font-size: 12px; 
@@ -334,11 +335,14 @@
       </span>
     </a>
 
-    <!-- Consultoría -->
+    <!-- Consultoría (Nuevo Icono Maletín) -->
     <a class="link-btn" target="_blank" rel="noopener"
        href="https://ignaciobriceno.com/consultoria?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=consultoria">
       <span class="icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
       </span>
       <span class="label">
         <span class="title" data-es="Consultoría" data-en="Consulting">Consultoría</span>
@@ -370,11 +374,15 @@
       </span>
     </a>
 
-    <!-- EcoTerras -->
+    <!-- EcoTerras (Nuevo Icono Globo Terráqueo) -->
     <a class="link-btn" target="_blank" rel="noopener"
        href="https://www.instagram.com/ecoterrassostenible/?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=ecoterras">
       <span class="icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M2 12h20"></path>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
       </span>
       <span class="label">
         <span class="title" data-es="EcoTerras" data-en="EcoTerras">EcoTerras</span>
@@ -399,7 +407,8 @@
 
   <footer>
     <div class="footer-logo">
-        <div class="logo-mark"></div>
+        <!-- Reemplazo a renderizado directo de imagen HTML para asegurar su visibilidad -->
+        <img src="/logo.png" alt="Logo JIBA">
     </div>
     <p class="copyright">© <span id="year"></span> Jesús Ignacio Briceño Alarcón · JIBA</p>
   </footer>
@@ -418,7 +427,6 @@
       document.documentElement.setAttribute('data-lang', lang);
       document.documentElement.lang = lang;
       textNodes.forEach(function(el){
-        // Usamos una clase o comprobación para no borrar la estructura interna de .label
         if(el.classList.contains('title') || el.classList.contains('sub') || el.classList.contains('badge') || el.classList.contains('tagline')){
             el.textContent = el.getAttribute('data-' + lang);
         }
