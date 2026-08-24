@@ -112,7 +112,6 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
-  /* Arquitectura del Anillo Animado Exterior */
   .avatar-ring {
     width: 115px; 
     height: 115px;
@@ -127,26 +126,26 @@
   .avatar-ring::before {
     content: '';
     position: absolute;
-    inset: -6px; /* Desplaza el anillo hacia afuera de la foto */
+    inset: -6px; 
     border-radius: 50%;
     background: linear-gradient(135deg, var(--azul-vivo), var(--azul-cielo), var(--navy));
     background-size: 200% 200%;
-    animation: gradientBG 4s ease infinite; /* Animación de movimiento de color */
+    animation: gradientBG 4s ease infinite; 
     z-index: 0;
-    box-shadow: 0 0 25px rgba(56, 130, 215, 0.6); /* Resplandor exterior */
+    box-shadow: 0 0 25px rgba(56, 130, 215, 0.6); 
   }
 
   .avatar-ring .photo {
     width: 100%; 
     height: 100%;
-    background-image: url("avatar.jpg");
+    background-image: url("/avatar.jpg");
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center;
     border-radius: 50%;
     position: relative;
     z-index: 1;
-    border: 4px solid var(--black-bg); /* Genera la separación entre el anillo dinámico y tu foto */
+    border: 4px solid var(--black-bg); 
   }
 
   .name {
@@ -288,7 +287,7 @@
     gap: 12px;
   }
   
-  /* Contenedor del Logo escalado correctamente */
+  /* Restauración exacta de tu código original para el logo que funcionaba al 100% */
   .footer-logo {
     width: 48px; 
     height: 48px;
@@ -300,18 +299,20 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     margin-bottom: 4px;
   }
-  .footer-logo img {
-    width: 75%; /* Reduce el tamaño de la imagen para que encaje sin cortarse */
-    height: 75%;
-    object-fit: contain; /* Obliga a mantener las proporciones exactas */
-    border-radius: 50%;
+  .footer-logo .logo-mark {
+    width: 78%; 
+    height: 78%;
+    background-image: url("/logo.png");
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center;
   }
   
   .copyright {
     font-size: 13px; 
     color: var(--text-muted);
     font-weight: 400;
-    white-space: nowrap; /* Evita que el texto salte a una segunda línea */
+    white-space: nowrap; 
   }
 
   @media (max-width: 400px) {
@@ -425,7 +426,7 @@
 
   <footer>
     <div class="footer-logo">
-        <img src="logo.png" alt="Logo JIBA">
+        <div class="logo-mark"></div>
     </div>
     <p class="copyright">© <span id="year"></span> Jesús Ignacio Briceño Alarcón - JIBA</p>
   </footer>
