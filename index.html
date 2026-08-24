@@ -17,6 +17,7 @@
     --navy: #16283F; 
     --azul-medio: #2E4F73;
     --azul-cielo: #7FA8C9;
+    --azul-vivo: #3882D7; /* Extraído directamente de los botones de tu web */
     --slate: #B9C7D4;
     
     --primary-gradient: linear-gradient(135deg, var(--azul-cielo) 0%, var(--navy) 100%); 
@@ -117,7 +118,8 @@
     background: var(--primary-gradient);
     margin-bottom: 24px;
     position: relative;
-    box-shadow: 0 0 25px rgba(127, 168, 201, 0.3);
+    /* Sombra luminosa ajustada al azul vivo de la marca */
+    box-shadow: 0 0 25px rgba(56, 130, 215, 0.4);
   }
   .avatar-ring .photo {
     width: 100%; height: 100%;
@@ -127,8 +129,8 @@
     background-repeat: no-repeat; 
     background-position: center;
     border-radius: 50%;
-    /* Borde actualizado a tu azul claro para mejor contraste */
-    border: 3px solid var(--azul-cielo);
+    /* Borde circular actualizado al azul vivo */
+    border: 3px solid var(--azul-vivo);
   }
 
   .name {
@@ -270,27 +272,27 @@
     gap: 12px;
   }
   
-  /* Nuevo Logo Tipográfico CSS */
+  /* Contenedor del Logo 100% circular, igual al diseño original */
   .footer-logo {
-    width: 44px; height: 44px;
-    border-radius: 10px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: var(--white);
+    margin-bottom: 2px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   }
-  .footer-logo-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--white);
-    letter-spacing: 1px;
+  .footer-logo .logo-mark {
+    width: 85%; height: 85%;
+    background-image: url("/logo.png");
+    background-size: contain; background-repeat: no-repeat; background-position: center;
   }
   
   .copyright {
     font-size: 12px; 
     color: var(--text-muted);
     font-weight: 300;
+    max-width: 90%;
   }
 
   @media (max-width: 400px) {
@@ -325,7 +327,6 @@
 
   <div class="links">
 
-    <!-- Sitio web -->
     <a class="link-btn" target="_blank" rel="noopener"
        href="https://ignaciobriceno.com/?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=sitio_web">
       <span class="icon">
@@ -337,7 +338,6 @@
       </span>
     </a>
 
-    <!-- Consultoría -->
     <a class="link-btn" target="_blank" rel="noopener"
        href="https://ignaciobriceno.com/consultoria?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=consultoria">
       <span class="icon">
@@ -352,7 +352,6 @@
       </span>
     </a>
 
-    <!-- Recursos gratuitos -->
     <a class="link-btn" target="_blank" rel="noopener"
        href="https://ignaciobriceno.com/recursos?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=recursos">
       <span class="icon">
@@ -364,7 +363,6 @@
       </span>
     </a>
 
-    <!-- Newsletter -->
     <a class="link-btn" target="_blank" rel="noopener"
        href="https://ignaciobriceno.com/newsletter?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=newsletter">
       <span class="icon">
@@ -376,7 +374,6 @@
       </span>
     </a>
 
-    <!-- EcoTerras (Nuevo Icono Hoja Minimalista) -->
     <a class="link-btn" target="_blank" rel="noopener"
        href="https://www.instagram.com/ecoterrassostenible/?utm_source=instagram&utm_medium=linkinbio&utm_campaign=bio&utm_content=ecoterras">
       <span class="icon">
@@ -408,9 +405,9 @@
 
   <footer>
     <div class="footer-logo">
-        <span class="footer-logo-text">JIBA</span>
+        <div class="logo-mark"></div>
     </div>
-    <p class="copyright">© <span id="year"></span> Jesús Ignacio Briceño Alarcón · JIBA</p>
+    <p class="copyright">© <span id="year"></span> Todos los derechos reservados · Jesús Ignacio Briceño Alarcón · JIBA</p>
   </footer>
 
 </div>
